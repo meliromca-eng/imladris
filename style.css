@@ -132,6 +132,6 @@ em p { text-align: center; color: #5c5046; }
 }
 
 .sub-tab-button:hover {
-  background: rgba(200, 200, 255, 0.2); /* jemné podbarvení při hoveru */
+  background: rgba(164, 122, 37, 0.263); /* jemné podbarvení při hoveru */
   transform: scale(1.05); /* mírné zvětšení */
 }
