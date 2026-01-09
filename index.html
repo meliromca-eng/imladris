@@ -1,0 +1,596 @@
+<!DOCTYPE html>
+<html lang="cs">
+<head>
+  <meta charset="UTF-8">
+  <title>Imladris</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <div class="boho-frame">
+    <h1>Imladris</h1>
+    <em><p>„Tvůj bezpečný kout, kde můžeš zpomalit, zhluboka dýchat a obnovit svou vnitřní rovnováhu.“</p></em>
+    <div class="boho-divider"></div>
+
+    <!-- HLAVNÍ PŘEPÍNAČ -->
+    <div class="tabs">
+      <button class="tab-button active" onclick="openMainTab(event, 'motivace-sekce')">Motivace na každý den</button>
+      <button class="tab-button" onclick="openMainTab(event, 'dech-sekce')">Dechové cvičení</button>
+      <button class="tab-button" onclick="openMainTab(event, 'afirmace-sekce')">Afirmace</button>
+      <button class="tab-button" onclick="openMainTab(event, 'nevyhoreni-sekce')">Jak nevyhořet</button>
+    </div>
+  </div>
+
+  <!-- SEKCE MOTIVACE -->
+  <div id="motivace-sekce" class="tab-content active">
+    <details class="motivation-card" open>
+      <summary class="motivation-summary">
+         Vyber si svou motivaci pro dnešní den 
+      </summary>
+      
+      <div class="motivation-inner-nav">
+         <p class="instruction-text">Klikni na téma, které tě zajímá:</p>
+         <div class="sub-tabs">
+            <button class="sub-tab-button active" onclick="openSubTab(event, 'klid-content')">Klid</button>
+            <button class="sub-tab-button" onclick="openSubTab(event, 'prace-content')">Práce</button>
+            <button class="sub-tab-button" onclick="openSubTab(event, 'vztahy-content')">Vztahy</button>
+            <button class="sub-tab-button" onclick="openSubTab(event, 'skola-content')">Škola</button>
+            <button class="sub-tab-button" onclick="openSubTab(event, 'rodina-content')">Rodina</button>
+  <button class="sub-tab-button" onclick="openSubTab(event, 'pratelstvi-content')">Přátelství</button>
+  <button class="sub-tab-button" onclick="openSubTab(event, 'sebepce-content')">Sebepéče</button>
+         </div>
+      </div>
+
+      <div class="motivation-display-area">
+        <!-- KLID -->
+        <div id="klid-content" class="sub-tab-content active">
+          <div class="content-box">
+            <img src="images/klid.jpg" class="boho-image">
+            <p class="quote">„Dýchej. Nemusíš mít všechno pod kontrolou.“</p>
+            <p class="author">jemná připomínka</p>
+            <p class="quote">„Není nutné mít všechno pod kontrolou, stačí být tady a teď.“</p>
+            <p class="author">Pro tvou mysl a srdce</p>
+            <p class="quote">„Klid je stav mysli, který si můžeš vybrat každý den.“</p>
+            <p class="author">Malá opora dne</p>
+            <p class="quote">„Každá bouře nakonec odezní – tak jako napětí v tobě."</p>
+            <p class="author">Dotek klidu</p>
+            <p class="quote">„Klid není absence problémů, ale schopnost je unést."</p>
+            <p class="author">Slova pro tebe</p>
+            <p class="quote">„Uvolni ramena, uvolni mysl, uvolni srdce."</p>
+            <p class="author">Měkký průvodce</p>
+          </div>
+        </div>
+
+        <!-- PRÁCE -->
+        <div id="prace-content" class="sub-tab-content">
+          <div class="content-box">
+            <img src="images/prace.jpg" class="boho-image">
+            <p class="quote">„Dělej jednu věc v klidu. To stačí.“</p>
+            <p class="author">pro pracovní den</p>
+           <p class="quote">„Malé kroky každý den vedou k velkým výsledkům.“</p>
+    <p class="author">Jemná připomínka</p>
+    <p class="quote">„Soustřeď se na to, co můžeš ovlivnit, a zbytek nech být.“</p>
+    <p class="author">Praktická rada</p>
+    <p class="quote">„Kvalita je důležitější než kvantita.“</p>
+    <p class="author">Malá opora dne</p>
+    <p class="quote">„Práce, která dává smysl, se zvládá snáz.“</p>
+    <p class="author">Dotek klidu</p>
+    <p class="quote">„Chyby nejsou selhání, ale lekce.“</p>
+    <p class="author">Užitečná moudrost</p>
+    <p class="quote">„Produktivita začíná klidem a pořádkem v mysli.“</p>
+    <p class="author">Slova pro tebe</p>
+    <p class="quote">„Není ostuda požádat o pomoc. Ostuda je zůstávat v tichém vyčerpání.“</p>
+    <p class="author">Měkký průvodce</p>
+    <p class="quote">„Motivace je jako oheň – potřebuje pravidelnou péči.“</p>
+    <p class="author">Inspirace dne</p>
+    <p class="quote">„Každý úkol je příležitost se něco naučit.“</p>
+    <p class="author">Malá připomínka</p>
+    <p class="quote">„Práce je součást cesty, ne celý cíl.“</p>
+    <p class="author">Jemná myšlenka</p>
+          </div>
+        </div>
+
+        <!-- VZTAHY -->
+        <div id="vztahy-content" class="sub-tab-content">
+          <div class="content-box">
+            <img src="images/vztahy.jpg" class="boho-image">
+            <p class="quote">„Laskavost je forma síly.“</p>
+            <p class="author">pro srdce</p>
+            <p class="quote">„Vztahy nejsou o dokonalosti, ale o porozumění a trpělivosti.“</p>
+    <p class="author">Jemná připomínka</p>
+
+    <p class="quote">„Každý vztah je lekce, která nás učí o nás samotných.“</p>
+    <p class="author">Moudrá rada</p>
+
+    <p class="quote">„Komunikace je most, který spojuje srdce.“</p>
+    <p class="author">Dotek klidu</p>
+
+    <p class="quote">„Respekt a laskavost jsou pevnější než očekávání.“</p>
+    <p class="author">Slova pro tebe</p>
+
+    <p class="quote">„Vztahy prospívají tam, kde je více porozumění než kritiky.“</p>
+    <p class="author">Malá opora</p>
+
+    <p class="quote">„Lidé se mění a vztahy rostou, když jim dáme prostor.“</p>
+    <p class="author">Jemná myšlenka</p>
+
+    <p class="quote">„Sdílení radosti i smutku posiluje pouto.“</p>
+    <p class="author">Užitečná moudrost</p>
+
+    <p class="quote">„Vztahy jsou zrcadlem – ukazují, co v sobě potřebujeme pochopit.“</p>
+    <p class="author">Inspirace dne</p>
+
+    <p class="quote">„Naslouchat znamená milovat beze slov.“</p>
+    <p class="author">Jemná připomínka</p>
+
+    <p class="quote">„Každý vztah stojí na malých gestech, která se skládají v blízkost.“</p>
+    <p class="author">Dotek klidu</p>
+          </div>
+        </div>
+
+        <!-- ŠKOLA -->
+        <div id="skola-content" class="sub-tab-content">
+          <div class="content-box">
+            <img src="images/skola.jpg" class="boho-image"> 
+            <p class="quote">„Nejlepší způsob, jak předpovědět budoucnost, je ji vytvořit.“</p>
+            <p class="author">Abraham Lincoln</p>
+            <p class="quote">„Učení je dobrodružství, ne závod.“</p>
+    <p class="author">Jemná připomínka</p>
+
+    <p class="quote">„Každý den můžeš začít znovu – s čistou tabulí.“</p>
+    <p class="author">Nový začátek</p>
+
+    <p class="quote">„Chyby jsou známkou toho, že to zkoušíš.“</p>
+    <p class="author">Poučení dne</p>
+
+    <p class="quote">„Trpělivost je klíčem k pochopení.“</p>
+    <p class="author">Malá opora</p>
+
+    <p class="quote">„Učení je investice do sebe sama.“</p>
+    <p class="author">Moudrá rada</p>
+
+    <p class="quote">„Každá otázka tě posune dál.“</p>
+    <p class="author">Dotek klidu</p>
+
+    <p class="quote">„Paměť roste opakováním, porozumění přemýšlením.“</p>
+    <p class="author">Slova pro tebe</p>
+
+    <p class="quote">„Odměň se za snahu, ne jen za výsledek.“</p>
+    <p class="author">Malá radost</p>
+
+    <p class="quote">„Sdílení znalostí posiluje pochopení.“</p>
+    <p class="author">Užitečná moudrost</p>
+
+    <p class="quote">„Každý den se můžeš naučit něco, co ti změní pohled.“</p>
+    <p class="author">Inspirace dne</p>
+    </div>
+</div> 
+    <!-- Rodina -->
+<div id="rodina-content" class="sub-tab-content">
+  <div class="content-box">
+    <!-- obsah rodiny -->
+     <p class="quote">„Rodina je místo, kde začíná láska a nikdy nekončí.“</p>
+    <p class="author">Jemná připomínka</p>
+    <p class="quote">„Domov nejsou zdi, ale lidé, kteří tě přijímají.“</p>
+    <p class="author">Malá opora</p>
+    <p class="quote">„Rodina učí trpělivosti, odpuštění a bezpodmínečné lásce.“</p>
+    <p class="author">Užitečná moudrost</p>
+    <p class="quote">„Každý člen rodiny přináší do života jedinečné světlo.“</p>
+    <p class="author">Dotek klidu</p>
+    <p class="quote">„Společné chvíle jsou poklady, které čas nemůže vzít.“</p>
+    <p class="author">Slova pro tebe</p>
+    <p class="quote">„Rodina je zázemí, kam se srdce vrací, i když se svět mění.“</p>
+    <p class="author">Jemná myšlenka</p>
+    <p class="quote">„Láska v rodině se nepočítá, jen se cítí.“</p>
+    <p class="author">Inspirace dne</p>
+    <p class="quote">„Naslouchání v rodině je dar, který se vrací.“</p>
+    <p class="author">Malá opora</p>
+    <p class="quote">„Rodina drží, když se cítíš ztracená.“</p>
+    <p class="author">Jemná připomínka</p>
+    <p class="quote">„I malá laskavost v rodině má velkou hodnotu.“</p>
+    <p class="author">Dotek klidu</p>
+  </div>
+</div>
+
+<!-- Přátelství -->
+<div id="pratelstvi-content" class="sub-tab-content">
+  <div class="content-box">
+    <!-- obsah přátelství -->
+     <p class="quote">„Přátelé jsou rodina, kterou si vybíráme.“</p>
+    <p class="author">Jemná připomínka</p>
+    <p class="quote">„Pravé přátelství roste z důvěry a respektu.“</p>
+    <p class="author">Malá opora</p>
+    <p class="quote">„S přáteli je smích radostnější a starosti lehčí.“</p>
+    <p class="author">Dotek klidu</p>
+    <p class="quote">„Přátelství není o množství času, ale o jeho kvalitě.“</p>
+    <p class="author">Slova pro tebe</p>
+    <p class="quote">„Dobrý přítel rozumí i tvému tichu.“</p>
+    <p class="author">Jemná myšlenka</p>
+    <p class="quote">„Přátelé ti pomáhají najít cestu, když ji sama nevidíš.“</p>
+    <p class="author">Inspirace dne</p>
+    <p class="quote">„Sdílení radosti nás učí vděčnosti.“</p>
+    <p class="author">Malá opora</p>
+    <p class="quote">„Přátelství je vzácné – pečuj o něj.“</p>
+    <p class="author">Jemná připomínka</p>
+    <p class="quote">„Skutečný přítel ti dovolí být sama sebou.“</p>
+    <p class="author">Dotek klidu</p>
+    <p class="quote">„Přátelství se pozná podle laskavosti, ne podle slov.“</p>
+    <p class="author">Slova pro tebe</p>
+  </div>
+</div>
+
+<!-- Sebepéče -->
+<div id="sebepce-content" class="sub-tab-content">
+  <div class="content-box">
+
+    <!-- obsah sebepéče -->
+     <p class="quote">„Péče o sebe není sobeckost, je to nutnost.“</p>
+    <p class="author">Jemná připomínka</p>
+    <p class="quote">„Odpočinek je součástí rovnováhy.“</p>
+    <p class="author">Malá opora</p>
+    <p class="quote">„Dovol si být tady a teď.“</p>
+    <p class="author">Dotek klidu</p>
+    <p class="quote">„Každý den si dopřej malou chvíli pro sebe.“</p>
+    <p class="author">Slova pro tebe</p>
+    <p class="quote">„Sebepéče začíná uznáním vlastních potřeb.“</p>
+    <p class="author">Jemná myšlenka</p>
+    <p class="quote">„Mé tělo i mysl si zaslouží laskavost.“</p>
+    <p class="author">Inspirace dne</p>
+    <p class="quote">„Když se starám o sebe, mohu lépe pečovat o ostatní.“</p>
+    <p class="author">Malá opora</p>
+    <p class="quote">„Malé radosti vedou k vnitřní rovnováze.“</p>
+    <p class="author">Jemná připomínka</p>
+    <p class="quote">„Říkat „ne“ je součást respektu k sobě.“</p>
+    <p class="author">Dotek klidu</p>
+    <p class="quote">„Sebepéče je investice do energie a klidu.“</p>
+    <p class="author">Slova pro tebe</p>
+          </div>
+        </div>
+      </div>
+    </details>
+  </div>
+
+  <!-- SEKCE DECH -->
+  <div id="dech-sekce" class="tab-content">
+    <div class="content-box">
+      <div class="lotus-container">
+        <div class="lotus">
+          <span></span><span></span><span></span>
+          <span></span><span></span><span></span>
+        </div>
+      </div>
+      <p class="quote">
+        Když se květ <strong>přibližuje</strong>, <strong>nadechni se</strong>.<br>
+        Když se <strong>oddaluje</strong>, <strong>vydechni</strong>.<br>
+        Když se pohyb <strong>zastaví</strong>, <strong>na chvíli spočiň</strong>.
+      </p>
+      <p class="quote">„Dech je most mezi tělem a myslí.“</p>
+      <div class="breath-text">
+        <p><strong>Nádech:</strong> pomalu nosem</p>
+        <p><strong>Výdech:</strong> ještě pomaleji ústy</p>
+        <p><strong>Pauza:</strong> krátké spočinutí</p>
+      </div>
+      <p class="author">
+        Sleduj pohyb květu a dýchej s ním.<br>
+        Bez tlaku. Bez výkonu. Jen přítomnost.
+      </p>
+    </div>
+  </div>
+
+  <!-- SEKCE AFIRMACE -->
+  <div id="afirmace-sekce" class="tab-content">
+    <details class="motivation-card" open>
+      <summary class="motivation-summary">
+        Vyber si afirmace podle toho, co dnes potřebuješ
+      </summary>
+
+      <div class="motivation-inner-nav">
+        <p class="instruction-text">
+          Afirmace jsou pozitivní věty, které mění vnitřní dialog, podporují klid, sebevědomí a motivaci.<br>
+          Pomáhají přijímat sebe i život s větší laskavostí.<br>
+          <span class="instruction-call">Naslouchej sobě a klikni:</span>
+        </p>
+
+        <div class="sub-tabs">
+          <button class="sub-tab-button active" onclick="openSubTab(event, 'af-klid')">Klid</button>
+          <button class="sub-tab-button" onclick="openSubTab(event, 'af-sebeduvera')">Sebedůvěra</button>
+          <button class="sub-tab-button" onclick="openSubTab(event, 'af-tezkedny')">Těžké dny</button>
+          <button class="sub-tab-button" onclick="openSubTab(event, 'af-rano')">Ráno</button>
+          <button class="sub-tab-button" onclick="openSubTab(event, 'af-vecer')">Večer</button>
+        </div>
+      </div>
+
+      <div class="motivation-display-area">
+        <!-- KLID -->
+        <div id="af-klid" class="sub-tab-content active">
+          <div class="content-box">
+            <p class="quote">✧ Dýchám pomalu a moje tělo se uvolňuje.</p>
+            <p class="quote">✧ Nemusím mít všechno pod kontrolou.</p>
+            <p class="quote">✧ V tomto okamžiku jsem v bezpečí.</p>
+            <p class="quote">✧ Dovoluji si zpomalit.</p>
+            <p class="quote">✧ Klid začíná jedním vědomým nádechem.</p>
+            <p class="quote">✧ Teď nemusím nic řešit.</p>
+            <p class="quote">✧ Je v pořádku být unavená</p>
+          </div>
+        </div>
+
+        <!-- SEBEDŮVĚRA -->
+        <div id="af-sebeduvera" class="sub-tab-content">
+          <div class="content-box">
+            <p class="quote">✧ Jsem dost dobrá taková, jaká jsem dnes.</p>
+            <p class="quote">✧ Nemusím být dokonalá, abych měla hodnotu.</p>
+            <p class="quote">✧ Věřím si, i když si nejsem jistá.</p>
+            <p class="quote">✧ Moje cesta je jedinečná.</p>
+            <p class="quote">✧ Dovoluji si růst vlastním tempem.</p>
+            <p class="quote">✧ Moje rozhodnutí mají váhu.</p>
+          </div>
+        </div>
+
+        <!-- TĚŽKÉ DNY -->
+        <div id="af-tezkedny" class="sub-tab-content">
+          <div class="content-box">
+            <p class="quote">✧ Dnes stačí málo.</p>
+            <p class="quote">✧ I to, že jsem vstala, se počítá.</p>
+            <p class="quote">✧ Nemusím být silná pořád.</p>
+            <p class="quote">✧ Tento den mě nedefinuje.</p>
+            <p class="quote">✧ Je v pořádku cítit se tak, jak se cítím.</p>
+            <p class="quote">✧ Dělám, co můžu – a to stačí.</p>
+            <p class="quote">✧ I tohle přejde.</p>
+          </div>
+        </div>
+
+        <!-- RÁNO -->
+        <div id="af-rano" class="sub-tab-content">
+          <div class="content-box">
+            <p class="quote">✧ Dnes půjdu krok za krokem.</p>
+            <p class="quote">✧ Dovoluji si začít pomalu.</p>
+            <p class="quote">✧ Dnes budu k sobě laskavá.</p>
+            <p class="quote">✧ Můj den nemusí být dokonalý, aby byl dobrý.</p>
+            <p class="quote">✧ Otevřu se tomu, co den přinese.</p>
+          </div>
+        </div>
+
+        <!-- VEČER -->
+        <div id="af-vecer" class="sub-tab-content">
+          <div class="content-box">
+            <p class="quote">✧ Dělala jsem dnes, co bylo v mých silách.</p>
+            <p class="quote">✧ Dovoluji si odložit dnešní starosti.</p>
+            <p class="quote">✧ Teď je čas odpočinku.</p>
+            <p class="quote">✧ Můj den může skončit klidem.</p>
+            <p class="quote">✧ Teď je čas odpočinku.</p>
+          </div>
+        </div>
+
+      </div>
+    </details>
+  </div>
+
+  <!-- SEKCE JAK NEVYHOŘET -->
+  <div id="nevyhoreni-sekce" class="tab-content">
+    <div class="content-box">
+      <h3 class="section-title">Jak nevyhořet</h3>
+      <p class="instruction-text">
+        Prostor pro zpomalení, návrat k sobě a ochranu vlastní energie.
+      </p>
+
+      <div class="boho-divider"></div>
+
+      <h4 class="subsection-title">Jemný plán proti vyhoření</h4>
+
+      <p><strong>Uznání vlastní lidskosti</strong><br>
+      Není ostuda být unavená. Život je náročný a každý z nás má své limity.
+      Přijmi, že nejsi superhrdinka, i když často musíš nést hodně.</p>
+
+      <p><strong>Denní kotvy klidu</strong><br>
+      Najdi si každý den alespoň jednu chvíli, kdy se zastavíš, zhluboka dýcháš
+      a dovolíš si být jen tady. I pět minut je cenné.</p>
+
+      <p><strong>Malé kroky místo obrovských očekávání</strong><br>
+      Nepokoušej se zvládnout všechno najednou. I malý úspěch je výhra.</p>
+
+      <p><strong>Vnitřní dialog s laskavostí</strong><br>
+      Sleduj, jak se ke svému vnitřnímu já chováš.
+      Nahraď kritiku soucitem, mluv k sobě jako k nejlepšímu příteli.</p>
+
+      <p><strong>Pravidelné doplňování energie</strong><br>
+      Není to jen odpočinek – je to vyživování těla, mysli i duše:
+      krátká procházka, teplý čaj, meditace, hudba, kniha.</p>
+
+      <p><strong>Říkat „ne“ bez výčitek</strong><br>
+      Každé „ano“ něčemu vyčerpávajícímu je ztráta energie.
+      Uč se chránit své hranice.</p>
+
+      <p><strong>Soustředění na to, co můžeš ovlivnit</strong><br>
+      Klid i síla rostou tam, kde se zaměřuješ na svůj malý,
+      ale skutečný vliv.</p>
+
+      <p><strong>Podpora a sdílení</strong><br>
+      Není slabost požádat o pomoc. Sdílení tíhy uleví.</p>
+
+      <p><strong>Rituály a symboly</strong><br>
+      Malé rituály přinášejí bezpečí a stabilitu:
+      ranní dech, svíčka, deník, krátká meditace.</p>
+
+      <p><strong>Oslava malých vítězství</strong><br>
+      I přežití náročného dne je úspěch.</p>
+
+      <div class="boho-divider"></div>
+
+      <h4 class="subsection-title">Když cítíš vyhoření</h4>
+      <ul class="soft-list">
+        <li>Zastav se. Nemusíš hned znovu „fungovat“.</li>
+        <li>Dýchej a dovol si emoce.</li>
+        <li>Udělej jednu malou věc jen pro sebe.</li>
+        <li>Vyhoření není selhání, ale signál.</li>
+        <li>Malé kroky se počítají.</li>
+      </ul>
+
+      <div class="boho-divider"></div>
+
+      <h4 class="subsection-title">Slova proti vyhoření</h4>
+      <ul class="soft-list">
+        <li>Uznání vlastní lidskosti</li>
+        <li>Denní kotvy klidu</li>
+        <li>Malé kroky místo obrovských očekávání</li>
+        <li>Vnitřní dialog s laskavostí</li>
+        <li>Pravidelné doplňování energie</li>
+        <li>Říkat „ne“ bez výčitek</li>
+        <li>Podpora a sdílení</li>
+        <li>Oslava malých vítězství</li>
+      </ul>
+
+      <div class="boho-divider"></div>
+
+      <h4 class="subsection-title">Když už jsi vyhořela</h4>
+      <ul class="soft-list">
+        <li>Přijetí stavu</li>
+        <li>Zpomalení bez viny</li>
+        <li>Dech jako kotva</li>
+        <li>Ochrana hranic</li>
+        <li>Podpora od druhých</li>
+        <li>Jemné návraty k sobě</li>
+        <li>Sebelaskavost</li>
+        <li>Důvěra v návrat energie</li>
+      </ul>
+
+    </div>
+  </div>
+
+  <script>
+    // Přepínání hlavních sekcí (Motivace vs Dech)
+    function openMainTab(evt, tabId) {
+      const contents = document.querySelectorAll('.tab-content');
+      contents.forEach(c => c.classList.remove('active'));
+      const buttons = document.querySelectorAll('.tab-button');
+      buttons.forEach(b => b.classList.remove('active'));
+      document.getElementById(tabId).classList.add('active');
+      evt.currentTarget.classList.add('active');
+    }
+
+    // Přepínání témat uvnitř karty (Klid, Práce, Afirmace...)
+    function openSubTab(evt, subTabId) {
+      const contents = document.querySelectorAll('.sub-tab-content');
+      contents.forEach(c => c.classList.remove('active'));
+      const buttons = document.querySelectorAll('.sub-tab-button');
+      buttons.forEach(b => b.classList.remove('active'));
+      document.getElementById(subTabId).classList.add('active');
+      evt.currentTarget.classList.add('active');
+    }
+  </script>
+  <!-- PLOVOUCÍ MYŠLENKY (STRIDÁNÍ PO JEDNOM) -->
+<div id="floating-quotes-container"></div>
+
+<style>
+  /* Kontejner pro citáty */
+  #floating-quotes-container {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    pointer-events: none;
+    z-index: 10;
+    overflow: hidden;
+  }
+
+  /* Vzhled bubliny citátu */
+  .floating-quote {
+    position: absolute;
+    max-width: 200px;
+    background: rgba(255, 255, 255, 0.355); /* O něco viditelnější pozadí */
+    padding: 12px 18px;
+    border-radius: 15px;
+    font-size: 14px;
+    font-style: italic;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.05);
+    transition: opacity 1.5s ease; /* Pomalejší a jemnější mizení */
+    opacity: 0;
+    color: #555;
+    border: 1px solid rgba(200, 180, 150, 0.4);
+    text-align: center;
+  }
+</style>
+
+<script>
+  const floatingQuotes = [
+    "Každý den je nová příležitost začít znovu.",
+    "Malý krok vpřed je stále krok.",
+    "Síla je v tom, že nevzdáváš.",
+    "Odvaha je strach, který se rozhodl jít dál.",
+    "Každá snaha se počítá.",
+    "Motivace se rodí v akci.",
+    "Soustřeď se na svůj pokrok, ne na cizí úspěchy.",
+    "Překážky jsou součástí růstu.",
+    "Věř si. Nikdo jiný to za tebe neudělá."
+  ];
+
+  const container = document.getElementById('floating-quotes-container');
+
+  function showNextQuote() {
+    const quoteDiv = document.createElement('div');
+    quoteDiv.classList.add('floating-quote');
+// Přidání lehkého posunu při scrollu
+window.addEventListener('scroll', () => {
+  const quotes = document.querySelectorAll('.floating-quote');
+  quotes.forEach(q => {
+    const offset = window.scrollY * 0.02; // jemný pohyb
+    q.style.transform = `translateY(${offset}px)`;
+  });
+});
+
+    // Výběr náhodného textu
+    const randomIndex = Math.floor(Math.random() * floatingQuotes.length);
+    quoteDiv.textContent = floatingQuotes[randomIndex];
+
+    // Pozice na okrajích
+    const marginWidth = 250; 
+    const isLeft = Math.random() < 0.5;
+    
+    let x;
+    if (isLeft) {
+      x = Math.random() * (marginWidth - 180); 
+    } else {
+      x = (window.innerWidth - marginWidth) + (Math.random() * (marginWidth - 180));
+    }
+
+    let y = Math.random() * (window.innerHeight - 150);
+    quoteDiv.style.left = x + 'px';
+    quoteDiv.style.top = y + 'px';
+
+    container.appendChild(quoteDiv);
+
+    // 1. Zobrazení (Fade in)
+    setTimeout(() => {
+      quoteDiv.style.opacity = 1;
+    }, 100);
+
+    // Jemný pohyb
+    let dx = (Math.random() * 0.4 - 0.2);
+    let dy = (Math.random() * 0.4 - 0.2);
+    const moveInterval = setInterval(() => {
+      x += dx; y += dy;
+      quoteDiv.style.left = x + 'px';
+      quoteDiv.style.top = y + 'px';
+    }, 50);
+
+    // 2. Po 28 sekundách začne mizet (aby ve 30s byl pryč)
+    setTimeout(() => {
+      quoteDiv.style.opacity = 0;
+    }, 15000);
+
+    // 3. Po 30 sekundách prvek smažeme a hned vyvoláme další
+    setTimeout(() => {
+      clearInterval(moveInterval);
+      quoteDiv.remove();
+      showNextQuote(); // <-- Tady se "vzápětí" vyvolá další citát
+    }, 30000);
+  }
+
+  // Spuštění prvního citátu
+  showNextQuote();
+
+</script>
+
+
+</body>
+</html>

@@ -1,0 +1,137 @@
+@import url('https://fonts.googleapis.com/css2?family=Lora&family=Cormorant+Garamond:wght@400;700&display=swap');
+
+
+body {
+  background-color: #f2ede7; 
+  background-image: linear-gradient(rgba(250, 244, 237, 0.7), rgba(242, 237, 231, 0.7)), url('images/les.jpg.jpg');
+  background-attachment: fixed;
+  background-size: cover;
+  background-position: center;
+  font-family: 'Lora', serif;
+  margin: 0;
+  min-height: 100vh;
+}
+
+h1 { font-family: 'Cormorant Garamond', serif; font-weight: 700; color: #0b0b0a; margin-top: 40px; text-align: center; }
+em p { text-align: center; color: #5c5046; }
+
+/* HLAVNÍ MENU */
+.tabs { display: flex; justify-content: center; gap: 12px; margin: 30px 0; }
+.tab-button {
+  background-color: #ede4da; border: none; padding: 12px 25px; border-radius: 25px;
+  cursor: pointer; font-size: 14px; transition: 0.3s; font-family: 'Lora', serif;
+}
+.tab-button.active { background-color: #c3b2a1; color: white; }
+
+/* ROZBALOVACÍ KARTA */
+.motivation-card {
+  max-width: 550px; margin: 0 auto 40px;
+  background: rgba(255, 255, 255, 0.35); border-radius: 30px;
+  border: 1px solid rgba(160, 131, 110, 0.2); backdrop-filter: blur(5px);
+  overflow: hidden;
+}
+.motivation-summary {
+  padding: 25px; cursor: pointer; text-align: center;
+  font-family: 'Cormorant Garamond', serif; font-size: 22px; font-weight: bold;
+  color: #5c5046; list-style: none;
+}
+.motivation-summary::-webkit-details-marker { display: none; }
+
+/* VNITŘNÍ NAVIGACE V KARTĚ */
+.instruction-text { font-size: 14px; color: #8c786a; margin-bottom: 10px; text-align: center; }
+.sub-tabs { display: flex; justify-content: center; flex-wrap: wrap; gap: 8px; padding: 10px 20px; }
+.sub-tab-button {
+  background: rgba(255,255,255,0.5); border: 1px solid #e0d5c8; padding: 8px 16px;
+  border-radius: 15px; cursor: pointer; font-size: 13px; transition: 0.3s;
+}
+.sub-tab-button.active { background: #a5866a; color: white; border-color: #a5866a; }
+
+/* OBSAH */
+.tab-content, .sub-tab-content { display: none; opacity: 0; }
+.tab-content.active, .sub-tab-content.active {
+  display: block; opacity: 1; animation: breathIn 1s ease-out;
+}
+
+.content-box {
+  max-width: 420px; margin: 20px auto; padding: 30px 20px;
+  background: rgba(255, 255, 255, 0.5); border-radius: 30px;
+  box-shadow: 0 10px 25px rgba(0,0,0,0.05); text-align: center;
+}
+
+.boho-image { width: 160px; height: auto; border-radius: 20px; margin: 0 auto 20px; display: block; }
+.quote { font-family: 'Cormorant Garamond', serif; font-size: 22px; font-style: italic; line-height: 1.6; color: #222; margin: 15px 0; }
+.author { font-size: 13px; color: #a0836e; text-transform: uppercase; letter-spacing: 1px; margin-bottom: 25px; }
+
+/* LOTUS ANIMACE */
+.lotus-container { display: flex; justify-content: center; margin: 30px 0; }
+.lotus { position: relative; width: 140px; height: 140px; animation: breath 13s ease-in-out infinite; }
+.lotus span {
+  position: absolute; width: 60px; height: 90px; background: linear-gradient(to top, #d6c3b0, #f3e7dd);
+  border-radius: 50% 50% 0 0; transform-origin: bottom center; opacity: 0.8;
+}
+/* Rozmístění lístků */
+.lotus span:nth-child(1) { transform: rotate(0deg) translateY(-20px); }
+.lotus span:nth-child(2) { transform: rotate(60deg) translateY(-20px); }
+.lotus span:nth-child(3) { transform: rotate(120deg) translateY(-20px); }
+.lotus span:nth-child(4) { transform: rotate(180deg) translateY(-20px); }
+.lotus span:nth-child(5) { transform: rotate(240deg) translateY(-20px); }
+.lotus span:nth-child(6) { transform: rotate(300deg) translateY(-20px); }
+
+@keyframes breath {
+  0%, 100% { transform: scale(1); }
+  30%, 45% { transform: scale(0.75); }
+  80% { transform: scale(1.1); }
+}
+
+@keyframes breathIn {
+  0% { opacity: 0; transform: translateY(10px); }
+  100% { opacity: 1; transform: translateY(0); }
+}
+
+/* DIVIDER */
+.boho-divider {
+  position: relative; margin: 35px auto; width: 160px; height: 1px;
+  background: rgba(165, 134, 106, 0.4);
+}
+.boho-divider::before, .boho-divider::after {
+  content: "❀"; position: absolute; top: -14px; font-size: 18px; color: #a5866a;
+}
+.boho-divider::before { left: -25px; }
+.boho-divider::after { right: -25px; }
+/* AFIRMACE – jemnější text */
+#afirmace-sekce .quote {
+  font-size: 20px;
+  margin: 18px 0;
+}
+
+/* Hvězdičky jako jemný motiv */
+#afirmace-sekce .quote::before {
+  content: "";
+}
+#nevyhoreni-sekce .motivation-card {
+  background: rgba(255, 255, 255, 0.6);
+}
+.instruction-call {
+  display: block;
+  margin-top: 0.5em;
+  font-style: italic;
+  opacity: 0.85;
+}
+.sub-tab-content {
+  opacity: 0;
+  transition: opacity 0.5s ease;
+  display: none; /* aby bylo skryté */
+}
+
+.sub-tab-content.active {
+  opacity: 1;
+  display: block;
+}
+.sub-tab-button {
+  transition: background 0.3s, color 0.3s, transform 0.2s;
+}
+
+.sub-tab-button:hover {
+  background: rgba(200, 200, 255, 0.2); /* jemné podbarvení při hoveru */
+  transform: scale(1.05); /* mírné zvětšení */
+}
