@@ -529,14 +529,6 @@
   function showNextQuote() {
     const quoteDiv = document.createElement('div');
     quoteDiv.classList.add('floating-quote');
-// Přidání lehkého posunu při scrollu
-window.addEventListener('scroll', () => {
-  const quotes = document.querySelectorAll('.floating-quote');
-  quotes.forEach(q => {
-    const offset = window.scrollY * 0.02; // jemný pohyb
-    q.style.transform = `translateY(${offset}px)`;
-  });
-});
 
     // Výběr náhodného textu
     const randomIndex = Math.floor(Math.random() * floatingQuotes.length);
@@ -594,3 +586,4 @@ window.addEventListener('scroll', () => {
 
 </body>
 </html>
+
