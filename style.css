@@ -139,7 +139,7 @@ body {
 .title-line {
   width: 160px;
   height: 1px;
-  background: rgba(255, 255, 255, 0.6); /* jemná bílá */
+  background: rgba(255, 255, 255, 0.597); /* jemná bílá */
   margin: 10px auto 25px; /* prostor kolem */
 }
 /* ===== HORNÍ LIŠTA ===== */
@@ -163,7 +163,7 @@ body {
 .top-link {
   background: none;
   border: none;
-  color: white;
+  color: rgba(255, 255, 255, 0.715);
   font-size: 13px;
   cursor: pointer;
   opacity: 0.8;
@@ -363,10 +363,15 @@ body {
   transition: 0.3s;
 }
 
+.aff-btn {
+  background: #d8d1df;
+}
+
 .aff-btn.active {
-  background: #8f78b5;
+  background: #5b4d67;   /* stejná jako motivace */
   color: white;
 }
+
 
 /* obsah */
 .aff-content {
@@ -409,10 +414,15 @@ body {
   transition: 0.3s;
 }
 
+.burn-btn {
+  background: #d8d1df;
+}
+
 .burn-btn.active {
-  background: #9b7aa5;
+  background: #5b4d67;   /* stejná jako motivace */
   color: white;
 }
+
 
 .burn-content {
   display: none;
@@ -472,10 +482,16 @@ body {
   transition: 0.3s;
 }
 
+.med-btn {
+  background: rgba(91, 77, 103, 0.15);   /* z barvy motivace */
+  border: 1px solid rgba(91, 77, 103, 0.3);
+}
+
 .med-btn.active {
-  background: #8c78a0;
+  background: #5b4d67;   /* stejná jako motivace */
   color: white;
 }
+
 
 .med-content {
   display: none;
@@ -557,19 +573,18 @@ body::before {
   z-index: 9999;
 }
 /* ===== sjednocení chování tlačítek na mobilu ===== */
-
-.burn-btn:focus,
-.burn-btn:active {
-  background: #9b7aa5;
-  color: white;
-  outline: none;
-}
+/* ===== sjednocení chování tlačítek na mobilu ===== */
 
 .mot-btn:focus,
 .mot-btn:active,
 .aff-btn:focus,
 .aff-btn:active,
+.burn-btn:focus,
+.burn-btn:active,
 .med-btn:focus,
 .med-btn:active {
+  background: #5b4d67;   /* stejná barva jako motivace */
+  color: white;
   outline: none;
 }
+
