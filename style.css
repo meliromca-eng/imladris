@@ -1,35 +1,27 @@
 @import url('https://fonts.googleapis.com/css2?family=Lora&family=Cormorant+Garamond:wght@400;700&display=swap');
 
-/* ================== ZÁKLAD ================== */
-*,
-*::before,
-*::after {
+* {
   box-sizing: border-box;
-}
-
-img {
-  max-width: 100%;
-  height: auto;
 }
 
 body {
   margin: 0;
   font-family: 'Lora', serif;
-  background-color: #6d3b6b87;
+  background-color: #b28cabbb;
 }
 
-/* ================== HERO ================== */
+/* ===== HERO ===== */
 .hero {
-  height: 55vh;
+  height: 45vh; /* zatím cca 40–45 % */
   background-image: url("images/louka.jpg");
-  background-size: 90%;
-  background-position: center 60%;
-  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
+  position: relative;
 }
 
 .hero-overlay {
   height: 100%;
-  background: rgba(146, 82, 203, 0.038);
+  background: rgba(91, 77, 103, 0.03);
   backdrop-filter: blur(1px);
   display: flex;
   flex-direction: column;
@@ -54,14 +46,103 @@ body {
   font-size: 15px;
 }
 
+/* ===== MENU ===== */
+.main-menu {
+  display: flex;
+  gap: 12px;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+.menu-btn {
+  background: rgba(255,255,255,0.7);
+  border: none;
+  padding: 10px 18px;
+  border-radius: 25px;
+  cursor: pointer;
+  font-size: 13px;
+  transition: 0.3s;
+}
+
+.menu-btn:hover {
+  background: rgba(255,255,255,0.9);
+}
+
+.menu-btn.active {
+  background: #5b4d67;
+  color: white;
+}
+
+/* ===== OBSAH ===== */
+.content {
+  padding: 50px 20px;
+}
+
+/* SEKCE */
+.page-section {
+  display: none;
+}
+
+.page-section.active {
+  display: block;
+}
+
+/* MLÉČNÁ KARTA */
+.milk-card {
+  max-width: 600px;
+  margin: 0 auto;
+  background: rgba(255,255,255,0.8);
+  padding: 30px;
+  border-radius: 25px;
+  text-align: center;
+  box-shadow: 0 10px 30px rgba(0,0,0,0.08);
+}
+/* ===== OBRÁZKOVÉ MENU ===== */
+.image-menu {
+  display: flex;
+  justify-content: center;
+  gap: 20px;
+  flex-wrap: wrap;
+}
+
+.image-btn {
+  width: 90px;
+  text-align: center;
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+.image-btn img {
+  width: 90px;
+  height: 90px;
+  object-fit: cover;
+  border-radius: 50%;
+  border: 3px solid rgba(255,255,255,0.7);
+  transition: 0.3s;
+}
+
+.image-btn span {
+  display: block;
+  margin-top: 6px;
+  font-size: 12px;
+  color: #fff;
+  letter-spacing: 1px;
+}
+
+.image-btn:hover img {
+  transform: scale(1.05);
+}
+
+.image-btn.active img {
+  border-color: #5b4d67;
+}
 .title-line {
   width: 160px;
   height: 1px;
-  background: rgba(255, 255, 255, 0.6);
-  margin: 10px auto 25px;
+  background: rgba(255, 255, 255, 0.6); /* jemná bílá */
+  margin: 10px auto 25px; /* prostor kolem */
 }
-
-/* ================== HORNÍ LIŠTA ================== */
+/* ===== HORNÍ LIŠTA ===== */
 .top-bar {
   position: absolute;
   top: 15px;
@@ -103,8 +184,7 @@ body {
 .top-right .insta-icon:hover {
   opacity: 1;
 }
-
-/* INFO BOX */
+/* ===== INFO OKNA ===== */
 .info-box {
   position: fixed;
   top: 80px;
@@ -119,48 +199,21 @@ body {
   z-index: 100;
   box-shadow: 0 10px 25px rgba(0,0,0,0.15);
 }
+/* ===== ANIMACE AKTIVNÍHO KOLEČKA ===== */
 
-/* ================== MENU KOLEČKA ================== */
-.image-menu {
-  display: flex;
-  justify-content: center;
-  gap: 28px;
-  flex-wrap: wrap;
-}
-
-.image-btn {
-  width: 120px;
-  text-align: center;
-  cursor: pointer;
-}
-
+/* základ – ať se vše hýbe plynule */
 .image-btn img {
-  width: 120px;
-  height: 120px;
-  object-fit: cover;
-  border-radius: 50%;
-  border: 3px solid rgba(255,255,255,0.7);
   transition: transform 0.25s ease, box-shadow 0.25s ease, border-color 0.25s ease;
 }
 
-.image-btn span {
-  display: block;
-  margin-top: 6px;
-  font-size: 12px;
-  color: #fff;
-  letter-spacing: 1px;
-}
-
-.image-btn:hover img {
-  transform: scale(1.05);
-}
-
+/* aktivní stav */
 .image-btn.active img {
   transform: scale(1.12);
   box-shadow: 0 10px 25px rgba(0,0,0,0.25);
   border-color: #ffffff;
 }
 
+/* jemné „nadechnutí“ při kliknutí */
 .image-btn.active {
   animation: softPulse 0.35s ease-out;
 }
@@ -170,32 +223,7 @@ body {
   60%  { transform: scale(1.05); }
   100% { transform: scale(1); }
 }
-
-/* ================== OBSAH ================== */
-.content {
-  padding: 50px 20px;
-}
-
-.page-section {
-  display: none;
-}
-
-.page-section.active {
-  display: block;
-}
-
-/* ================== KARTA ================== */
-.milk-card {
-  max-width: 600px;
-  margin: 0 auto;
-  background: rgba(228, 219, 228, 0.8);
-  padding: 30px;
-  border-radius: 25px;
-  text-align: center;
-  box-shadow: 0 10px 30px rgba(0,0,0,0.08);
-}
-
-/* ================== MOTIVACE ================== */
+/* ===== MOTIVACE – MALÁ KOLEČKA ===== */
 .motivation-menu {
   display: flex;
   flex-wrap: wrap;
@@ -216,25 +244,31 @@ body {
   transition: 0.3s;
 }
 
+.mot-btn:hover {
+  opacity: 1;
+}
+
 .mot-btn.active {
   background: #ffffff;
   color: #5b4d67;
   box-shadow: 0 6px 15px rgba(0,0,0,0.2);
 }
 
-.mot-content { display: none; }
-.mot-content.active { display: block; }
-
-/* ================== TEXTY ================== */
-.author {
-  font-size: 11px;
-  font-style: italic;
-  opacity: 0.8;
+/* ===== OBSAHY ===== */
+.mot-content {
+  display: none;
 }
 
+.mot-content.active {
+  display: block;
+}
 /* ================== DECH ================== */
-.breath-section { text-align: center; }
 
+.breath-section {
+  text-align: center;
+}
+
+/* květ */
 .flower-wrap {
   display: flex;
   justify-content: center;
@@ -258,6 +292,7 @@ body {
   opacity: 0.9;
 }
 
+/* rozmístění lístků */
 .flower span:nth-child(1){transform:rotate(0deg) translateY(-22px);}
 .flower span:nth-child(2){transform:rotate(45deg) translateY(-22px);}
 .flower span:nth-child(3){transform:rotate(90deg) translateY(-22px);}
@@ -267,59 +302,257 @@ body {
 .flower span:nth-child(7){transform:rotate(270deg) translateY(-22px);}
 .flower span:nth-child(8){transform:rotate(315deg) translateY(-22px);}
 
+/* dechová animace */
 @keyframes breathing {
+  /* klid */
   0%   { transform: scale(1); }
+
+  /* nádech */
   25%  { transform: scale(1.1); }
+
+  /* krátká pauza */
   40%  { transform: scale(1.1); }
+
+  /* výdech */
   70%  { transform: scale(0.95); }
+
+  /* návrat do klidu */
   100% { transform: scale(1); }
 }
 
-/* ================== LOGO DOLE ================== */
+/* texty */
+.breath-text {
+  margin: 20px 0;
+  font-size: 15px;
+}
+
+.author {
+  font-style: italic;
+  font-size: 13px;
+  opacity: 0.8;
+}
+/* ===== AFIRMACE ===== */
+
+.section-title {
+  text-align: center;
+  margin-bottom: 15px;
+}
+
+.intro-text {
+  text-align: center;
+  font-size: 16px;
+  margin-bottom: 10px;
+}
+
+/* tlačítka */
+.affirmation-menu {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 10px;
+  margin: 20px 0;
+}
+
+.aff-btn {
+  background: #c7b6d8;
+  border: none;
+  padding: 8px 16px;
+  border-radius: 20px;
+  cursor: pointer;
+  font-family: 'Cormorant Garamond', serif;
+  transition: 0.3s;
+}
+
+.aff-btn.active {
+  background: #8f78b5;
+  color: white;
+}
+
+/* obsah */
+.aff-content {
+  display: none;
+  margin-top: 20px;
+}
+
+.aff-content.active {
+  display: block;
+  animation: fadeAff 0.6s ease;
+}
+
+@keyframes fadeAff {
+  from { opacity: 0; transform: translateY(6px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
+
+/* jednotlivé afirmace */
+.aff {
+  font-size: 18px;
+  margin: 8px 0;
+}
+/* ===== JAK NEVYHOŘET ===== */
+
+.burnout-menu {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 10px;
+  margin: 20px 0;
+}
+
+.burn-btn {
+  background: #d8c7d9;
+  border: none;
+  padding: 8px 14px;
+  border-radius: 20px;
+  cursor: pointer;
+  font-family: 'Cormorant Garamond', serif;
+  transition: 0.3s;
+}
+
+.burn-btn.active {
+  background: #9b7aa5;
+  color: white;
+}
+
+.burn-content {
+  display: none;
+  margin-top: 20px;
+  font-size: 17px;
+  line-height: 1.6;
+}
+
+.burn-content.active {
+  display: block;
+  animation: fadeBurn 0.6s ease;
+}
+
+@keyframes fadeBurn {
+  from { opacity: 0; transform: translateY(6px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
+
+.soft-list {
+  padding-left: 20px;
+}
+
+.soft-list li {
+  margin: 8px 0;
+}
+/* ===================== */
+/*     MEDITACE         */
+/* ===================== */
+
+.meditation-wrap {
+  max-width: 700px;
+  margin: 0 auto;
+  text-align: center;
+}
+
+.meditation-intro {
+  margin-bottom: 25px;
+  font-size: 16px;
+  line-height: 1.6;
+}
+
+.meditation-menu {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 10px;
+  margin-bottom: 25px;
+}
+
+.med-btn {
+  background: rgba(140, 120, 160, 0.15);
+  border: 1px solid rgba(140, 120, 160, 0.3);
+  padding: 8px 16px;
+  border-radius: 20px;
+  cursor: pointer;
+  font-size: 13px;
+  transition: 0.3s;
+}
+
+.med-btn.active {
+  background: #8c78a0;
+  color: white;
+}
+
+.med-content {
+  display: none;
+  opacity: 0;
+  transition: opacity 0.4s ease;
+  margin-top: 20px;
+}
+
+.med-content.active {
+  display: block;
+  opacity: 1;
+}
+
+.med-content h3 {
+  margin-bottom: 10px;
+}
+
+.med-content p {
+  line-height: 1.7;
+}
+
+.med-end {
+  margin-top: 15px;
+  font-style: italic;
+  opacity: 0.85;
+}
+
+/* AUDIO */
+.audio-area {
+  margin-top: 35px;
+}
+
+.audio-btn {
+  border-radius: 50%;
+  padding: 14px 20px;
+  border: none;
+  background: #5b4d67;
+  color: white;
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+.audio-btn:hover {
+  transform: scale(1.05);
+}
+
+.audio-info {
+  display: none;
+  margin-top: 10px;
+  font-size: 14px;
+  opacity: 0.8;
+}
+/* ===== LOGO POD RÁMEM ===== */
 .logo-stamp {
   margin-top: 25px;
   text-align: center;
 }
 
 .logo-stamp img {
-  width: 120px;
-  opacity: 0.35;
+  width: 120px;          /* klidně pak změníš */
+  opacity: 0.35;        /* jemné razítko */
   filter: grayscale(100%);
   transition: 0.3s ease;
 }
 
 .logo-stamp img:hover {
-  opacity: 0.6;
-}
-
-/* ================== RESPONSIVE ================== */
-@media (max-width: 1024px) {
-  .image-menu { gap: 14px; }
-  .image-btn { width: 90px; }
-  .hero h1 { font-size: 2.4rem; }
-  .milk-card { padding: 28px 22px; }
-}
-
-@media (max-width: 768px) {
-  .top-bar { flex-direction: column; gap: 8px; text-align: center; }
-  .hero h1 { font-size: 2rem; letter-spacing: 2px; }
-  .hero-subtitle { font-size: 0.95rem; padding: 0 10px; }
-  .image-btn { width: 80px; }
-  .image-btn span { font-size: 0.75rem; }
-  .milk-card { padding: 22px 18px; border-radius: 18px; }
-}
-
-@media (max-width: 480px) {
-  .hero h1 { font-size: 1.8rem; }
-  .image-btn { width: 70px; }
-  .image-btn span { font-size: 0.7rem; }
-  .milk-card { padding: 18px 14px; }
+  opacity: 0.6;         /* lehce se zvýrazní při najetí */
 }
 body::before {
   content: "";
   position: fixed;
   inset: 0;
   pointer-events: none;
-  box-shadow: inset 0 0 120px rgba(0, 0, 0, 0.577);
+  background: radial-gradient(
+    ellipse at center,
+    rgba(255, 255, 255, 0) 60%,
+    rgba(0, 0, 0, 0.458) 100%
+  );
   z-index: 9999;
 }

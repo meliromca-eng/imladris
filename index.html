@@ -75,7 +75,6 @@
 <section id="motivace" class="page-section active">
   <div class="milk-card">
 
-
     <!-- KATEGORIE -->
     <div class="motivation-menu">
       <button class="mot-btn active" onclick="openMotivation('klid', this)">Klid</button>
@@ -320,6 +319,42 @@
   </div>
 </section>
 
+
+    <!-- SEBEPÉČE -->
+    <div id="sebepce" class="mot-content">
+      <p class="quote">„Péče o sebe není sobeckost, je to nutnost.“</p>
+      <p class="author">Jemná připomínka</p>
+
+      <p class="quote">„Odpočinek je součástí rovnováhy.“</p>
+      <p class="author">Malá opora</p>
+
+      <p class="quote">„Dovol si být tady a teď.“</p>
+      <p class="author">Dotek klidu</p>
+
+      <p class="quote">„Každý den si dopřej malou chvíli pro sebe.“</p>
+      <p class="author">Slova pro tebe</p>
+
+      <p class="quote">„Sebepéče začíná uznáním vlastních potřeb.“</p>
+      <p class="author">Jemná myšlenka</p>
+
+      <p class="quote">„Mé tělo i mysl si zaslouží laskavost.“</p>
+      <p class="author">Inspirace dne</p>
+
+      <p class="quote">„Když se starám o sebe, mohu lépe pečovat o ostatní.“</p>
+      <p class="author">Malá opora</p>
+
+      <p class="quote">„Malé radosti vedou k vnitřní rovnováze.“</p>
+      <p class="author">Jemná připomínka</p>
+
+      <p class="quote">„Říkat „ne“ je součást respektu k sobě.“</p>
+      <p class="author">Dotek klidu</p>
+
+      <p class="quote">„Sebepéče je investice do energie a klidu.“</p>
+      <p class="author">Slova pro tebe</p>
+
+  </div>
+</section>
+
   </div>
 </section>
 
@@ -334,34 +369,26 @@
         <span></span><span></span><span></span><span></span>
       </div>
     </div>
-
-   <p class="quote">
-  Polož si ruku na břicho a vnímej, jak se při nádechu jemně zvedá.
+<p class="quote">
+  Sleduj pohyb květu jen jako jemnou připomínku zpomalit.<br>
+  Nemusíš dýchat přesně podle něj – dýchej tak, jak je ti příjemné.
 </p>
+
+<p class="quote">„Dech je most mezi tělem a myslí.“</p>
 
 <div class="breath-text">
-  <p><strong>Nádech:</strong> klidně nosem na 4 doby</p>
-  <p><strong>Výdech:</strong> pomalu ústy na 4 doby</p>
+  <p><strong>Nádech:</strong> klidně a přirozeně</p>
+  <p><strong>Výdech:</strong> o něco delší než nádech</p>
+  <p><strong>Pauza:</strong> jen když se sama objeví</p>
 </div>
 
-<p class="quote">
-  Opakuj několik cyklů a nech dech plynout bez tlaku.
-</p>
-
 <p class="author">
-  Dech má být příjemný – ne dokonalý.
+  Pokud se kdykoli cítíš nepříjemně,<br>
+  klidně se vrať ke svému přirozenému dechu.
 </p>
 
 
-    <p class="quote">„Dech je most mezi tělem a myslí.“</p>
-
-    
-    <p class="author">
-      Sleduj pohyb květu a dýchej s ním.<br>
-      Bez tlaku. Bez výkonu. Jen přítomnost.
-    </p>
-
-  </div>
+</div>
 </section>
 
 <!-- ========== AFIRMACE ========== -->
@@ -440,7 +467,6 @@
 
   </div>
 </section>
-
 
 <!-- ========== NEVYHOŘET ========== -->
 <section id="nevyhoreni" class="page-section">
@@ -552,7 +578,7 @@
   </div>
 </section>
 
-<!-- ========== MEDITACE ========== -->
+
 <!-- ================== -->
 <!--   SEKCE MEDITACE   -->
 <!-- ================== -->
@@ -665,12 +691,12 @@
   </div>
 </section>
 
-<div class="logo-stamp">
-  <img src="images/logo_Imladris.png" alt="Imladris logo">
-</div>
-
 
 </main>
+
+<div class="logo-stamp">
+  <img src="images/logo_imladris.png" alt="Imladris logo">
+</div>
 
 <!-- ===== SCRIPTY ===== -->
 <script>
@@ -694,6 +720,20 @@ function openInfo(id) {
     box.style.display = 'block';
     setTimeout(() => box.style.display = 'none', 3000);
   }
+}
+</script>
+
+<script>
+
+function openMotivation(id, el) {
+  document.querySelectorAll('.mot-content')
+    .forEach(c => c.classList.remove('active'));
+
+  document.querySelectorAll('.mot-btn')
+    .forEach(b => b.classList.remove('active'));
+
+  document.getElementById(id).classList.add('active');
+  el.classList.add('active');
 }
 </script>
 <script>
@@ -753,23 +793,6 @@ function showAudioInfo() {
   }, 3000);
 }
 </script>
-<script>
-function openMotivation(id, el) {
 
-  // skryj všechny obsahy
-  document.querySelectorAll('.mot-content')
-    .forEach(c => c.classList.remove('active'));
-
-  // zruš aktivní stav tlačítek
-  document.querySelectorAll('.mot-btn')
-    .forEach(b => b.classList.remove('active'));
-
-  // zobraz vybraný obsah
-  document.getElementById(id).classList.add('active');
-
-  // označ aktivní tlačítko
-  el.classList.add('active');
-}
-</script>
 </body>
 </html>
