@@ -12,7 +12,6 @@ body {
 
 /* ===== HERO ===== */
 .hero {
-  height: 45vh; /* zatím cca 40–45 % */
   background-image: url("images/louka.jpg");
   background-size: cover;
   background-position: center;
@@ -28,7 +27,7 @@ body {
   align-items: center;
   justify-content: center;
   text-align: center;
-  padding: 20px;
+  padding: 30px;
 }
 
 .hero h1 {
@@ -75,7 +74,7 @@ body {
 
 /* ===== OBSAH ===== */
 .content {
-  padding: 50px 20px;
+  padding: 30px 20px;
 }
 
 /* SEKCE */
@@ -92,7 +91,7 @@ body {
   max-width: 600px;
   margin: 0 auto;
   background: rgba(255,255,255,0.8);
-  padding: 30px;
+  padding: 40px;
   border-radius: 25px;
   text-align: center;
   box-shadow: 0 10px 30px rgba(0,0,0,0.08);
@@ -106,15 +105,15 @@ body {
 }
 
 .image-btn {
-  width: 90px;
+  width: 120px;
   text-align: center;
   cursor: pointer;
   transition: 0.3s;
 }
 
 .image-btn img {
-  width: 90px;
-  height: 90px;
+  width: 120px;
+  height: 120px;
   object-fit: cover;
   border-radius: 50%;
   border: 3px solid rgba(255,255,255,0.7);
@@ -124,7 +123,7 @@ body {
 .image-btn span {
   display: block;
   margin-top: 6px;
-  font-size: 12px;
+  font-size: 14px;
   color: #fff;
   letter-spacing: 1px;
 }
@@ -139,9 +138,11 @@ body {
 .title-line {
   width: 160px;
   height: 1px;
-  background: rgba(255, 255, 255, 0.597); /* jemná bílá */
-  margin: 10px auto 25px; /* prostor kolem */
+  background: rgba(255, 255, 255, 0.7);
+  margin: 10px auto 25px;
+  box-shadow: 0 0 4px rgba(0,0,0,0.4);
 }
+
 /* ===== HORNÍ LIŠTA ===== */
 .top-bar {
   position: absolute;
@@ -562,7 +563,7 @@ body::before {
   background: radial-gradient(
     ellipse at center,
     rgba(255, 255, 255, 0) 60%,
-    rgba(0, 0, 0, 0.458) 100%
+    rgba(0, 0, 0, 0.418) 100%
   );
   z-index: 9999;
 }
@@ -614,4 +615,35 @@ body::before {
 .burn-btn:active {
   outline: none;
   box-shadow: none;
+}
+@media (max-width: 768px) {
+  .content {
+    padding: 25px 15px;
+  }
+}
+/* ===== ÚPRAVA VÝŠKY HERO PODLE VELIKOSTI OBRAZOVKY ===== */
+
+/* běžné monitory */
+.hero {
+  height: 40vh;
+}
+
+/* menší notebooky / nízké monitory */
+@media (max-height: 800px) {
+  .hero {
+    height: 32vh;
+  }
+}
+
+/* mobily */
+@media (max-width: 768px) {
+  .hero {
+    height: 30vh;
+  }
+}
+@media (min-width: 1200px) {
+  .title-line {
+    height: 2px;
+    background: rgba(255,255,255,0.85);
+  }
 }
