@@ -1,163 +1,325 @@
 @import url('https://fonts.googleapis.com/css2?family=Lora&family=Cormorant+Garamond:wght@400;700&display=swap');
 
+/* ================== ZÁKLAD ================== */
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+img {
+  max-width: 100%;
+  height: auto;
+}
 
 body {
-  background-color: #f2ede7; 
-  background-image: linear-gradient(rgba(250, 244, 237, 0.7), rgba(242, 237, 231, 0.7)), url('images/pozadi_louka2.jpg');
-  background-attachment: fixed;
-  background-size: cover;
-  background-position: center;
-  font-family: 'Lora', serif;
   margin: 0;
-  min-height: 100vh;
-}
-
-h1 { font-family: 'Cormorant Garamond', serif; font-weight: 700; color: #0b0b0a; margin-top: 40px; text-align: center; }
-em p { text-align: center; color: #5c5046; }
-
-/* HLAVNÍ MENU */
-.tabs { display: flex; justify-content: center; gap: 12px; margin: 30px 0; }
-.tab-button {
-  background-color: #ede4da; border: none; padding: 12px 25px; border-radius: 25px;
-  cursor: pointer; font-size: 14px; transition: 0.3s; font-family: 'Lora', serif;
-}
-.tab-button.active { background-color: #c3b2a1; color: white; }
-
-/* ROZBALOVACÍ KARTA */
-.motivation-card {
-  max-width: 550px; margin: 0 auto 40px;
-  background: rgba(255, 255, 255, 0.35); border-radius: 30px;
-  border: 1px solid rgba(160, 131, 110, 0.2); backdrop-filter: blur(5px);
-  overflow: hidden;
-}
-.motivation-summary {
-  padding: 25px; cursor: pointer; text-align: center;
-  font-family: 'Cormorant Garamond', serif; font-size: 22px; font-weight: bold;
-  color: #5c5046; list-style: none;
-}
-.motivation-summary::-webkit-details-marker { display: none; }
-
-/* VNITŘNÍ NAVIGACE V KARTĚ */
-.instruction-text { font-size: 14px; color: #8c786a; margin-bottom: 10px; text-align: center; }
-.sub-tabs { display: flex; justify-content: center; flex-wrap: wrap; gap: 8px; padding: 10px 20px; }
-.sub-tab-button {
-  background: rgba(255,255,255,0.5); border: 1px solid #e0d5c8; padding: 8px 16px;
-  border-radius: 15px; cursor: pointer; font-size: 13px; transition: 0.3s;
-}
-.sub-tab-button.active { background: #a5866a; color: white; border-color: #a5866a; }
-
-/* OBSAH */
-.tab-content, .sub-tab-content { display: none; opacity: 0; }
-.tab-content.active, .sub-tab-content.active {
-  display: block; opacity: 1; animation: breathIn 1s ease-out;
-}
-
-.content-box {
-  max-width: 420px; margin: 20px auto; padding: 30px 20px;
-  background: rgba(255, 255, 255, 0.5); border-radius: 30px;
-  box-shadow: 0 10px 25px rgba(0,0,0,0.05); text-align: center;
-}
-
-.boho-image { width: 160px; height: auto; border-radius: 20px; margin: 0 auto 20px; display: block; }
-.quote { font-family: 'Cormorant Garamond', serif; font-size: 22px; font-style: italic; line-height: 1.6; color: #222; margin: 15px 0; }
-.author { font-size: 13px; color: #a0836e; text-transform: uppercase; letter-spacing: 1px; margin-bottom: 25px; }
-
-/* LOTUS ANIMACE */
-.lotus-container { display: flex; justify-content: center; margin: 30px 0; }
-.lotus { position: relative; width: 140px; height: 140px; animation: breath 13s ease-in-out infinite; }
-.lotus span {
-  position: absolute; width: 60px; height: 90px; background: linear-gradient(to top, #d6c3b0, #f3e7dd);
-  border-radius: 50% 50% 0 0; transform-origin: bottom center; opacity: 0.8;
-}
-/* Rozmístění lístků */
-.lotus span:nth-child(1) { transform: rotate(0deg) translateY(-20px); }
-.lotus span:nth-child(2) { transform: rotate(60deg) translateY(-20px); }
-.lotus span:nth-child(3) { transform: rotate(120deg) translateY(-20px); }
-.lotus span:nth-child(4) { transform: rotate(180deg) translateY(-20px); }
-.lotus span:nth-child(5) { transform: rotate(240deg) translateY(-20px); }
-.lotus span:nth-child(6) { transform: rotate(300deg) translateY(-20px); }
-
-@keyframes breath {
-  0%, 100% { transform: scale(1); }
-  30%, 45% { transform: scale(0.75); }
-  80% { transform: scale(1.1); }
-}
-
-@keyframes breathIn {
-  0% { opacity: 0; transform: translateY(10px); }
-  100% { opacity: 1; transform: translateY(0); }
-}
-
-/* DIVIDER */
-.boho-divider {
-  position: relative; margin: 35px auto; width: 160px; height: 1px;
-  background: rgba(165, 134, 106, 0.4);
-}
-.boho-divider::before, .boho-divider::after {
-  content: "❀"; position: absolute; top: -14px; font-size: 18px; color: #a5866a;
-}
-.boho-divider::before { left: -25px; }
-.boho-divider::after { right: -25px; }
-/* AFIRMACE – jemnější text */
-#afirmace-sekce .quote {
-  font-size: 20px;
-  margin: 18px 0;
-}
-
-/* Hvězdičky jako jemný motiv */
-#afirmace-sekce .quote::before {
-  content: "";
-}
-#nevyhoreni-sekce .motivation-card {
-  background: rgba(255, 255, 255, 0.6);
-}
-.instruction-call {
-  display: block;
-  margin-top: 0.5em;
-  font-style: italic;
-  opacity: 0.85;
-}
-.sub-tab-content {
-  opacity: 0;
-  transition: opacity 0.5s ease;
-  display: none; /* aby bylo skryté */
-}
-
-.sub-tab-content.active {
-  opacity: 1;
-  display: block;
-}
-.sub-tab-button {
-  transition: background 0.3s, color 0.3s, transform 0.2s;
-}
-
-.sub-tab-button:hover {
-  background: rgba(164, 122, 37, 0.263); /* jemné podbarvení při hoveru */
-  transform: scale(1.05); /* mírné zvětšení */
-}
-.sub-tab-button {
-  background: rgba(255,255,255,0.5);
-  border: 1px solid #e0d5c8;
-  padding: 8px 16px;
-  border-radius: 15px;
-  cursor: pointer;
-  font-size: 13px;
-  transition: 0.3s;
-  color: #5c5046; /* Tuto barvu přidejte */
-}
-.tab-button {
-  background-color: #ede4da; 
-  border: none; 
-  padding: 12px 25px; 
-  border-radius: 25px;
-  cursor: pointer; 
-  font-size: 14px; 
-  transition: 0.3s; 
   font-family: 'Lora', serif;
-  color: #5c5046; /* TENTO ŘÁDEK PŘIDEJTE */
+  background-color: #6d3b6b87;
 }
 
-.tab-button.active { 
-  background-color: #c3b2a1; 
-  color: white; /* Tento řádek už máte */
+/* ================== HERO ================== */
+.hero {
+  height: 55vh;
+  background-image: url("images/louka.jpg");
+  background-size: 90%;
+  background-position: center 60%;
+  background-repeat: no-repeat;
+}
+
+.hero-overlay {
+  height: 100%;
+  background: rgba(146, 82, 203, 0.038);
+  backdrop-filter: blur(1px);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  padding: 20px;
+}
+
+.hero h1 {
+  font-family: 'Cormorant Garamond', serif;
+  letter-spacing: 6px;
+  margin: 0;
+  font-size: 42px;
+  color: #fff;
+}
+
+.hero-subtitle {
+  max-width: 600px;
+  color: #f5f5f5;
+  margin: 15px 0 25px;
+  font-size: 15px;
+}
+
+.title-line {
+  width: 160px;
+  height: 1px;
+  background: rgba(255, 255, 255, 0.6);
+  margin: 10px auto 25px;
+}
+
+/* ================== HORNÍ LIŠTA ================== */
+.top-bar {
+  position: absolute;
+  top: 15px;
+  left: 0;
+  width: 100%;
+  padding: 0 25px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  z-index: 50;
+}
+
+.top-left {
+  display: flex;
+  gap: 15px;
+}
+
+.top-link {
+  background: none;
+  border: none;
+  color: white;
+  font-size: 13px;
+  cursor: pointer;
+  opacity: 0.8;
+  transition: 0.3s;
+}
+
+.top-link:hover {
+  opacity: 1;
+  text-decoration: underline;
+}
+
+.top-right .insta-icon {
+  font-size: 18px;
+  cursor: pointer;
+  opacity: 0.7;
+}
+
+.top-right .insta-icon:hover {
+  opacity: 1;
+}
+
+/* INFO BOX */
+.info-box {
+  position: fixed;
+  top: 80px;
+  left: 50%;
+  transform: translateX(-50%);
+  background: rgba(255,255,255,0.9);
+  padding: 18px 25px;
+  border-radius: 18px;
+  font-size: 14px;
+  color: #333;
+  display: none;
+  z-index: 100;
+  box-shadow: 0 10px 25px rgba(0,0,0,0.15);
+}
+
+/* ================== MENU KOLEČKA ================== */
+.image-menu {
+  display: flex;
+  justify-content: center;
+  gap: 28px;
+  flex-wrap: wrap;
+}
+
+.image-btn {
+  width: 120px;
+  text-align: center;
+  cursor: pointer;
+}
+
+.image-btn img {
+  width: 120px;
+  height: 120px;
+  object-fit: cover;
+  border-radius: 50%;
+  border: 3px solid rgba(255,255,255,0.7);
+  transition: transform 0.25s ease, box-shadow 0.25s ease, border-color 0.25s ease;
+}
+
+.image-btn span {
+  display: block;
+  margin-top: 6px;
+  font-size: 12px;
+  color: #fff;
+  letter-spacing: 1px;
+}
+
+.image-btn:hover img {
+  transform: scale(1.05);
+}
+
+.image-btn.active img {
+  transform: scale(1.12);
+  box-shadow: 0 10px 25px rgba(0,0,0,0.25);
+  border-color: #ffffff;
+}
+
+.image-btn.active {
+  animation: softPulse 0.35s ease-out;
+}
+
+@keyframes softPulse {
+  0%   { transform: scale(1); }
+  60%  { transform: scale(1.05); }
+  100% { transform: scale(1); }
+}
+
+/* ================== OBSAH ================== */
+.content {
+  padding: 50px 20px;
+}
+
+.page-section {
+  display: none;
+}
+
+.page-section.active {
+  display: block;
+}
+
+/* ================== KARTA ================== */
+.milk-card {
+  max-width: 600px;
+  margin: 0 auto;
+  background: rgba(228, 219, 228, 0.8);
+  padding: 30px;
+  border-radius: 25px;
+  text-align: center;
+  box-shadow: 0 10px 30px rgba(0,0,0,0.08);
+}
+
+/* ================== MOTIVACE ================== */
+.motivation-menu {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 10px;
+  margin-bottom: 25px;
+}
+
+.mot-btn {
+  background: #5b4d67;
+  color: white;
+  border: none;
+  padding: 8px 16px;
+  border-radius: 50px;
+  font-size: 12px;
+  cursor: pointer;
+  opacity: 0.8;
+  transition: 0.3s;
+}
+
+.mot-btn.active {
+  background: #ffffff;
+  color: #5b4d67;
+  box-shadow: 0 6px 15px rgba(0,0,0,0.2);
+}
+
+.mot-content { display: none; }
+.mot-content.active { display: block; }
+
+/* ================== TEXTY ================== */
+.author {
+  font-size: 11px;
+  font-style: italic;
+  opacity: 0.8;
+}
+
+/* ================== DECH ================== */
+.breath-section { text-align: center; }
+
+.flower-wrap {
+  display: flex;
+  justify-content: center;
+  margin: 30px 0;
+}
+
+.flower {
+  position: relative;
+  width: 160px;
+  height: 160px;
+  animation: breathing 16s ease-in-out infinite;
+}
+
+.flower span {
+  position: absolute;
+  width: 70px;
+  height: 100px;
+  background: linear-gradient(to top, #c9b6d6, #f2eaf7);
+  border-radius: 50% 50% 0 0;
+  transform-origin: bottom center;
+  opacity: 0.9;
+}
+
+.flower span:nth-child(1){transform:rotate(0deg) translateY(-22px);}
+.flower span:nth-child(2){transform:rotate(45deg) translateY(-22px);}
+.flower span:nth-child(3){transform:rotate(90deg) translateY(-22px);}
+.flower span:nth-child(4){transform:rotate(135deg) translateY(-22px);}
+.flower span:nth-child(5){transform:rotate(180deg) translateY(-22px);}
+.flower span:nth-child(6){transform:rotate(225deg) translateY(-22px);}
+.flower span:nth-child(7){transform:rotate(270deg) translateY(-22px);}
+.flower span:nth-child(8){transform:rotate(315deg) translateY(-22px);}
+
+@keyframes breathing {
+  0%   { transform: scale(1); }
+  25%  { transform: scale(1.1); }
+  40%  { transform: scale(1.1); }
+  70%  { transform: scale(0.95); }
+  100% { transform: scale(1); }
+}
+
+/* ================== LOGO DOLE ================== */
+.logo-stamp {
+  margin-top: 25px;
+  text-align: center;
+}
+
+.logo-stamp img {
+  width: 120px;
+  opacity: 0.35;
+  filter: grayscale(100%);
+  transition: 0.3s ease;
+}
+
+.logo-stamp img:hover {
+  opacity: 0.6;
+}
+
+/* ================== RESPONSIVE ================== */
+@media (max-width: 1024px) {
+  .image-menu { gap: 14px; }
+  .image-btn { width: 90px; }
+  .hero h1 { font-size: 2.4rem; }
+  .milk-card { padding: 28px 22px; }
+}
+
+@media (max-width: 768px) {
+  .top-bar { flex-direction: column; gap: 8px; text-align: center; }
+  .hero h1 { font-size: 2rem; letter-spacing: 2px; }
+  .hero-subtitle { font-size: 0.95rem; padding: 0 10px; }
+  .image-btn { width: 80px; }
+  .image-btn span { font-size: 0.75rem; }
+  .milk-card { padding: 22px 18px; border-radius: 18px; }
+}
+
+@media (max-width: 480px) {
+  .hero h1 { font-size: 1.8rem; }
+  .image-btn { width: 70px; }
+  .image-btn span { font-size: 0.7rem; }
+  .milk-card { padding: 18px 14px; }
+}
+body::before {
+  content: "";
+  position: fixed;
+  inset: 0;
+  pointer-events: none;
+  box-shadow: inset 0 0 120px rgba(0, 0, 0, 0.577);
+  z-index: 9999;
 }
