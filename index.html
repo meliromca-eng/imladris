@@ -724,66 +724,44 @@ function openInfo(id) {
 </script>
 
 <script>
+// univerzální funkce pro všechna tlačítka
+function setActive(buttonsSelector, contentsSelector, id, el) {
 
+  // zruš aktivní tlačítka
+  document.querySelectorAll(buttonsSelector)
+    .forEach(b => b.classList.remove('active'));
+
+  // zruš aktivní obsahy
+  document.querySelectorAll(contentsSelector)
+    .forEach(c => c.classList.remove('active'));
+
+  // nastav nové
+  el.classList.add('active');
+  document.getElementById(id).classList.add('active');
+}
+
+/* MOTIVACE */
 function openMotivation(id, el) {
-  document.querySelectorAll('.mot-content')
-    .forEach(c => c.classList.remove('active'));
-
-  document.querySelectorAll('.mot-btn')
-    .forEach(b => b.classList.remove('active'));
-
-  document.getElementById(id).classList.add('active');
-  el.classList.add('active');
+  setActive('.mot-btn', '.mot-content', id, el);
 }
-</script>
-<script>
+
+/* AFIRMACE */
 function openAffirmation(id, el) {
-
-  // skryj všechny obsahy
-  document.querySelectorAll('.aff-content')
-    .forEach(c => c.classList.remove('active'));
-
-  // zruš aktivní stav tlačítek
-  document.querySelectorAll('.aff-btn')
-    .forEach(b => b.classList.remove('active'));
-
-  // zobraz vybraný obsah
-  document.getElementById(id).classList.add('active');
-
-  // označ aktivní tlačítko
-  el.classList.add('active');
+  setActive('.aff-btn', '.aff-content', id, el);
 }
-</script>
-<script>
+
+/* VYHOŘENÍ */
 function openBurnout(id, el) {
+  setActive('.burn-btn', '.burn-content', id, el);
+}
 
-  // skryj všechny obsahy
-  document.querySelectorAll('.burn-content')
-    .forEach(c => c.classList.remove('active'));
-
-  // zruš aktivní stav tlačítek
-  document.querySelectorAll('.burn-btn')
-    .forEach(b => b.classList.remove('active'));
-
-  // zobraz vybraný obsah
-  document.getElementById(id).classList.add('active');
-
-  // označ aktivní tlačítko
-  el.classList.add('active');
+/* MEDITACE */
+function openMeditation(id, el) {
+  setActive('.med-btn', '.med-content', id, el);
 }
 </script>
+
 <script>
-function openMeditation(id, el) {
-  document.querySelectorAll('.med-content')
-    .forEach(c => c.classList.remove('active'));
-
-  document.querySelectorAll('.med-btn')
-    .forEach(b => b.classList.remove('active'));
-
-  document.getElementById(id).classList.add('active');
-  el.classList.add('active');
-}
-
 function showAudioInfo() {
   const box = document.getElementById('audio-info');
   box.style.display = 'block';
@@ -794,5 +772,3 @@ function showAudioInfo() {
 }
 </script>
 
-</body>
-</html>

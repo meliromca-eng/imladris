@@ -268,7 +268,8 @@ body {
   text-align: center;
 }
 
-/* květ */
+/* ===== KVĚT – DECHOVÁ ANIMACE ===== */
+
 .flower-wrap {
   display: flex;
   justify-content: center;
@@ -279,9 +280,10 @@ body {
   position: relative;
   width: 160px;
   height: 160px;
-  animation: breathing 16s ease-in-out infinite;
+  animation: breathing 10s ease-in-out infinite;
 }
 
+/* lístky */
 .flower span {
   position: absolute;
   width: 70px;
@@ -292,33 +294,25 @@ body {
   opacity: 0.9;
 }
 
-/* rozmístění lístků */
-.flower span:nth-child(1){transform:rotate(0deg) translateY(-22px);}
-.flower span:nth-child(2){transform:rotate(45deg) translateY(-22px);}
-.flower span:nth-child(3){transform:rotate(90deg) translateY(-22px);}
-.flower span:nth-child(4){transform:rotate(135deg) translateY(-22px);}
-.flower span:nth-child(5){transform:rotate(180deg) translateY(-22px);}
-.flower span:nth-child(6){transform:rotate(225deg) translateY(-22px);}
-.flower span:nth-child(7){transform:rotate(270deg) translateY(-22px);}
-.flower span:nth-child(8){transform:rotate(315deg) translateY(-22px);}
+/* rozmístění lístků – TOTO JE DŮLEŽITÉ */
+.flower span:nth-child(1){transform: rotate(0deg)   translateY(-22px);}
+.flower span:nth-child(2){transform: rotate(45deg)  translateY(-22px);}
+.flower span:nth-child(3){transform: rotate(90deg)  translateY(-22px);}
+.flower span:nth-child(4){transform: rotate(135deg) translateY(-22px);}
+.flower span:nth-child(5){transform: rotate(180deg) translateY(-22px);}
+.flower span:nth-child(6){transform: rotate(225deg) translateY(-22px);}
+.flower span:nth-child(7){transform: rotate(270deg) translateY(-22px);}
+.flower span:nth-child(8){transform: rotate(315deg) translateY(-22px);}
 
-/* dechová animace */
+/* ===== DECH KVĚTU (celý tvar) ===== */
 @keyframes breathing {
-  /* klid */
-  0%   { transform: scale(1); }
-
-  /* nádech */
-  25%  { transform: scale(1.1); }
-
-  /* krátká pauza */
-  40%  { transform: scale(1.1); }
-
-  /* výdech */
-  70%  { transform: scale(0.95); }
-
-  /* návrat do klidu */
-  100% { transform: scale(1); }
+  0%   { transform: scale(0.95); }
+  25%  { transform: scale(1.08); }
+  45%  { transform: scale(1.08); }
+  70%  { transform: scale(0.92); }
+  100% { transform: scale(0.95); }
 }
+
 
 /* texty */
 .breath-text {
@@ -572,19 +566,52 @@ body::before {
   );
   z-index: 9999;
 }
-/* ===== sjednocení chování tlačítek na mobilu ===== */
-/* ===== sjednocení chování tlačítek na mobilu ===== */
+/* ================= SJEDNOCENÍ VZHLEDU TLAČÍTEK ================= */
+/* Motivace, Afirmace, Meditace, Vyhoření – stejné chování */
 
+/* ZÁKLAD */
+.mot-btn,
+.aff-btn,
+.med-btn,
+.burn-btn {
+  background: #5b4d67;
+  color: white;
+  border: none;
+  padding: 8px 16px;
+  border-radius: 50px;
+  font-size: 12px;
+  cursor: pointer;
+  opacity: 0.8;
+  transition: 0.3s;
+}
+
+/* HOVER */
+.mot-btn:hover,
+.aff-btn:hover,
+.med-btn:hover,
+.burn-btn:hover {
+  opacity: 1;
+}
+
+/* JEDINÝ SKUTEČNÝ AKTIVNÍ STAV */
+.mot-btn.active,
+.aff-btn.active,
+.med-btn.active,
+.burn-btn.active {
+  background: #ffffff;
+  color: #5b4d67;
+  box-shadow: 0 6px 15px rgba(0,0,0,0.2);
+}
+
+/* VYPNUTÍ NATIVNÍCH EFEKTŮ PRO MOBILY */
 .mot-btn:focus,
 .mot-btn:active,
 .aff-btn:focus,
 .aff-btn:active,
-.burn-btn:focus,
-.burn-btn:active,
 .med-btn:focus,
-.med-btn:active {
-  background: #5b4d67;   /* stejná barva jako motivace */
-  color: white;
+.med-btn:active,
+.burn-btn:focus,
+.burn-btn:active {
   outline: none;
+  box-shadow: none;
 }
-
