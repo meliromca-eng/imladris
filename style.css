@@ -556,3 +556,20 @@ body::before {
   );
   z-index: 9999;
 }
+/* ===== sjednocení chování tlačítek na mobilu ===== */
+
+.burn-btn:focus,
+.burn-btn:active {
+  background: #9b7aa5;
+  color: white;
+  outline: none;
+}
+
+.mot-btn:focus,
+.mot-btn:active,
+.aff-btn:focus,
+.aff-btn:active,
+.med-btn:focus,
+.med-btn:active {
+  outline: none;
+}
