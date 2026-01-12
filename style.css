@@ -553,7 +553,7 @@ body {
 }
 
 .logo-stamp img:hover {
-  opacity: 0.6;         /* lehce se zvýrazní při najetí */
+  opacity: 0.6;         /* lehce se zvýrazní při najetí s*/
 }
 body::before {
   content: "";
