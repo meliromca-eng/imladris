@@ -18,7 +18,7 @@
 <!-- ===== HORNÍ LIŠTA ===== -->
 <div class="top-bar">
   <div class="top-left">
-    <button class="top-link" onclick="openInfo('about')">O mně</button>
+    <button class="top-link" onclick="openSection('about-me', this)">O mně</button>
     <button class="top-link" onclick="openInfo('audio')">Audio</button>
   </div>
 
@@ -27,7 +27,93 @@
   </div>
 </div>
 
-<div id="about" class="info-box">Zatím tu nic není, ale brzy přibyde 💛</div>
+<section id="about-me" class="page-section">
+  <div class="milk-card about-card">
+
+    <!-- obrázek -->
+    <img src="images/Omne.jpg" alt="O mně – Imladris" class="about-image">
+
+    <!-- tlačítko -->
+    <button class="story-btn" onclick="toggleStory()">
+      Chcete znát celý příběh?
+    </button>
+
+    <!-- skrytý text -->
+    <div id="full-story" class="story-content">
+
+      <p>Ahoj,</p>
+
+      <p>
+        jsem máma čtyř dětí, což už samo o sobě naznačuje,
+        že vnitřní klid opravdu potřebuji 😂
+      </p>
+
+      <p>
+        Někde jsem četla, že je fajn vědět něco o „autorovi“.
+        Ale já nejsem spisovatel 😂
+      </p>
+
+      <p><strong>Tak jak vlastně tenhle web vznikl?</strong></p>
+
+      <p>
+        Úplně náhodou. V IT se pohybuji už nějaký ten rok
+        (pracuji jako helpdesk operátor) a jednoho dne přišel kamarád
+        s nabídkou: „Kurz testera softwaru.“  
+        A to bych nebyla já (ADHD), abych potom hned ne-chňapla 😂
+      </p>
+
+      <p>
+        Jenže… co čert nechtěl, vůbec mě to neoslovilo.
+        Několikrát jsem to chtěla vzdát, zažila jsem pár menších vyhoření,
+        ale nakonec jsem se tím kurzem nějak prokousala a řekla si:
+        <em>„Tak tohle už nikdy.“</em>
+      </p>
+
+      <p>
+        No jo… ale „a teď se budeme opakovat“ – to bych nebyla já,
+        abych zase nekoukala po další výzvě 😂
+      </p>
+
+      <p>
+        Už od mala mě bavil design. Jenomže škola designu se jaksi nepovedla
+        (když jsem šla studovat aranžérku, nikdo mi neřekl,
+        že to znamená aranžování výloh 😆).
+      </p>
+
+      <p>
+        A najednou to přišlo. Jako blesk z čistého nebe:<br>
+        <strong>DESIGN WEBU!</strong>
+      </p>
+
+      <p>
+        „Jo! To je ono. Přesně tohle chci dělat.“
+      </p>
+
+      <p>
+        A tak přišel na svět tenhle web.  
+        A proč právě <strong>Imladris</strong>?
+      </p>
+
+      <p>
+        Imladris je elfské jméno pro Roklinku – místo bezpečí, klidu a moudrosti.
+        Přesně takový prostor jsem chtěla vytvořit i tady.
+      </p>
+
+      <p>
+        Tenhle web vznikl i proto, aby lidé věděli:
+        <strong>„Nejste na to sami.“</strong>
+      </p>
+
+      <p class="story-note">
+        Nejsem psycholog ani terapeut. Pokud je vám opravdu těžko,
+        prosím, vyhledejte odbornou pomoc.
+        Tenhle web berte jako podpůrné místo, ne jako náhradu péče.
+      </p>
+
+    </div>
+  </div>
+</section>
+
 <div id="audio" class="info-box">Zatím tu nic není, ale brzy přibyde 🎧</div>
 
 <!-- ===== HERO ===== -->
@@ -771,3 +857,12 @@ function showAudioInfo() {
   }, 3000);
 }
 </script>
+
+<script>
+  /* omne */
+function toggleStory() {
+  const story = document.getElementById("full-story");
+  story.classList.toggle("active");
+}
+</script>
+

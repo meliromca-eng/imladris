@@ -647,3 +647,70 @@ body::before {
     background: rgba(255,255,255,0.85);
   }
 }
+/* ===== O MNĚ ===== */
+
+.about-card {
+  max-width: 700px;
+  margin: 0 auto;
+  text-align: center;
+}
+
+/* obrázek */
+.about-image {
+  width: 100%;
+  max-width: 520px;
+  border-radius: 12px;
+  margin-bottom: 20px;
+  box-shadow: 0 10px 25px rgba(0,0,0,0.15);
+}
+
+/* tlačítko */
+.story-btn {
+  background: #5b4d67;
+  color: white;
+  border: none;
+  padding: 10px 22px;
+  border-radius: 30px;
+  cursor: pointer;
+  font-size: 14px;
+  margin-bottom: 20px;
+  transition: 0.3s;
+}
+
+.story-btn:hover {
+  opacity: 0.9;
+  transform: scale(1.03);
+}
+
+/* text příběhu */
+.story-content {
+  display: none;
+  text-align: left;
+  line-height: 1.7;
+  font-size: 15px;
+  margin-top: 15px;
+  animation: fadeStory 0.6s ease;
+}
+
+.story-content.active {
+  display: block;
+}
+
+.story-content p {
+  margin-bottom: 14px;
+}
+
+/* poznámka dole */
+.story-note {
+  font-style: italic;
+  opacity: 0.8;
+  margin-top: 20px;
+  border-top: 1px solid rgba(0,0,0,0.1);
+  padding-top: 15px;
+}
+
+/* animace */
+@keyframes fadeStory {
+  from { opacity: 0; transform: translateY(8px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
