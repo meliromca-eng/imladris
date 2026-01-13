@@ -118,6 +118,7 @@
 
 <!-- ===== HERO ===== -->
 <header class="hero">
+  <div class="fireflies"></div>
   <div class="hero-overlay">
     <h1>IMLADRIS</h1>
     <div class="title-line"></div>
@@ -882,5 +883,31 @@ function toggleStory() {
 }
 
 </script>
+<script>
+document.addEventListener("DOMContentLoaded", () => {
+  const container = document.querySelector(".fireflies");
+  const count = 18; // kolik světlušek chceš
+
+  for (let i = 0; i < count; i++) {
+    const f = document.createElement("span");
+    f.classList.add("firefly");
+
+    // náhodná pozice
+    f.style.left = Math.random() * 100 + "%";
+    f.style.top = Math.random() * 100 + "%";
+
+    // náhodná velikost
+    const size = Math.random() * 3 + 2;
+    f.style.width = size + "px";
+    f.style.height = size + "px";
+
+    // náhodné zpoždění animace
+    f.style.animationDelay = Math.random() * 10 + "s";
+
+    container.appendChild(f);
+  }
+});
+</script>
+
 </body>
 </html>

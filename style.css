@@ -717,3 +717,60 @@ body::before {
 .hidden {
   display: none;
 }
+/* ===== SVĚTLUŠKY ===== */
+
+.hero {
+  position: relative;
+}
+
+/* vrstva se světluškami */
+.fireflies {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 50%;          /* jen horní polovina */
+  pointer-events: none; /* aby neblokovaly klikání */
+  overflow: hidden;
+  z-index: 2;          /* nad fotkou */
+}
+
+/* samotná světluška */
+.firefly {
+  position: absolute;
+  width: 4px;
+  height: 4px;
+  background: rgba(255, 255, 200, 0.9);
+  border-radius: 50%;
+  box-shadow: 0 0 8px rgba(255,255,200,0.8);
+  animation: float 12s linear infinite;
+  opacity: 0.8;
+}
+
+/* pohyb */
+@keyframes float {
+  0% {
+    transform: translateY(0) translateX(0);
+    opacity: 0.2;
+  }
+  25% {
+    opacity: 0.8;
+  }
+  50% {
+    transform: translateY(-40px) translateX(30px);
+    opacity: 1;
+  }
+  75% {
+    opacity: 0.6;
+  }
+  100% {
+    transform: translateY(-80px) translateX(-30px);
+    opacity: 0;
+  }
+}
+
+/* obsah nad nimi */
+.hero-content {
+  position: relative;
+  z-index: 3;  /* texty a tlačítka jsou NAD světluškami */
+}
