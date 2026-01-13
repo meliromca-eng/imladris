@@ -701,6 +701,7 @@
         Tady nemusíš nic řešit. Tady jsi v bezpečí.
         Zůstaň tu několik dechů a dovol si spočinout.
       </p>
+    
       <p class="med-end">Vrať se kdykoliv, kdy budeš potřebovat klid.</p>
     </div>
 
@@ -767,12 +768,16 @@
     </div>
 
     <!-- AUDIO MEDITACE BUTTON -->
-    <div class="audio-area">
-      <button class="audio-btn" onclick="showAudioInfo()">🎧 Audio meditace</button>
-      <div id="audio-info" class="audio-info">
-        Zatím není nahrána, ale už na tom pracujeme 🌿
-      </div>
-    </div>
+<div class="audio-area">
+  <button class="audio-btn" onclick="toggleMeditation()">🎧 Audio meditace</button>
+
+  <div id="audio-info" class="audio-info hidden">
+  <audio id="meditation-audio" controls>
+    <source src="pruvodce_meditaci.mp3" type="audio/mpeg">
+    Tvůj prohlížeč nepodporuje přehrávání audia.
+  </audio>
+</div>
+
 
   </div>
 </section>
@@ -848,21 +853,34 @@ function openMeditation(id, el) {
 </script>
 
 <script>
-function showAudioInfo() {
-  const box = document.getElementById('audio-info');
-  box.style.display = 'block';
-
-  setTimeout(() => {
-    box.style.display = 'none';
-  }, 3000);
-}
-</script>
-
-<script>
   /* omne */
 function toggleStory() {
   const story = document.getElementById("full-story");
   story.classList.toggle("active");
 }
 </script>
+<script>
+  function toggleMeditation() {
+  const box = document.getElementById("audio-info");
+  const audio = document.getElementById("meditation-audio");
+  const btn = document.querySelector(".audio-btn");
 
+  // přepnutí viditelnosti
+  box.classList.toggle("hidden");
+
+  // když se má zobrazit → hraj
+  if (!box.classList.contains("hidden")) {
+    audio.play();
+    btn.textContent = "⏸️ Zastavit meditaci";
+  } 
+  // když se má skrýt → stop
+  else {
+    audio.pause();
+    // audio.currentTime = 0; // vrátí na začátek
+    btn.textContent = "🎧 Audio meditace";
+  }
+}
+
+</script>
+</body>
+</html>
