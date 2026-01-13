@@ -773,11 +773,14 @@
   <button class="audio-btn" onclick="toggleMeditation()">🎧 Audio meditace</button>
 
   <div id="audio-info" class="audio-info hidden">
-  <audio id="meditation-audio" controls>
-    <source src="pruvodce_meditaci_mensi.mp3" type="audio/mpeg">
-    Tvůj prohlížeč nepodporuje přehrávání audia.
-  </audio>
+  <iframe 
+    src="https://audio.com/embed/audio/1854230201228829?theme=image"
+    style="width:100%; max-width:420px; height:210px; border:none; border-radius:8px;"
+    allow="autoplay"
+  ></iframe>
 </div>
+
+
 
 
   </div>
@@ -863,24 +866,17 @@ function toggleStory() {
 <script>
   function toggleMeditation() {
   const box = document.getElementById("audio-info");
-  const audio = document.getElementById("meditation-audio");
   const btn = document.querySelector(".audio-btn");
 
-  // přepnutí viditelnosti
   box.classList.toggle("hidden");
 
-  // když se má zobrazit → hraj
   if (!box.classList.contains("hidden")) {
-    audio.play();
-    btn.textContent = "⏸️ Zastavit meditaci";
-  } 
-  // když se má skrýt → stop
-  else {
-    audio.pause();
-    // audio.currentTime = 0; // vrátí na začátek
+    btn.textContent = "⏸️ Skrýt přehrávač";
+  } else {
     btn.textContent = "🎧 Audio meditace";
   }
 }
+
 
 </script>
 <script>

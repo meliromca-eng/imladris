@@ -534,11 +534,21 @@ body {
 }
 
 .audio-info {
-  display: none;
   margin-top: 10px;
   font-size: 14px;
-  opacity: 0.8;
+  opacity: 1;
+
+  max-height: 300px;
+  transition: all 0.3s ease;
 }
+
+.hidden {
+  opacity: 0;
+  max-height: 0;
+  overflow: hidden;
+  pointer-events: none;
+}
+
 /* ===== LOGO POD RÁMEM ===== */
 .logo-stamp {
   margin-top: 25px;
