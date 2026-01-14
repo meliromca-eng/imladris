@@ -18,14 +18,40 @@
 <!-- ===== HORNÍ LIŠTA ===== -->
 <div class="top-bar">
   <div class="top-left">
-    <button class="top-link" onclick="openSection('about-me', this)">O mně</button>
-    <button class="top-link" onclick="openInfo('audio')">Audio</button>
+   <button class="top-link" onclick="openSection('about-me', this)">O mně</button>
   </div>
 
   <div class="top-right">
-    <span class="insta-icon">📷</span>
+    <a href="https://www.instagram.com/imladris.prostor_klidu/"
+       target="_blank"
+       class="icon-link insta-icon"
+       title="Instagram">
+
+      <!-- Instagram SVG -->
+      <svg viewBox="0 0 24 24" width="22" height="22"
+           fill="currentColor" xmlns="http://www.w3.org/2000/svg">
+        <path d="M7.75 2h8.5A5.75 5.75 0 0 1 22 7.75v8.5A5.75 5.75 0 0 1 16.25 22h-8.5A5.75 5.75 0 0 1 2 16.25v-8.5A5.75 5.75 0 0 1 7.75 2zm0 1.5A4.25 4.25 0 0 0 3.5 7.75v8.5A4.25 4.25 0 0 0 7.75 20.5h8.5a4.25 4.25 0 0 0 4.25-4.25v-8.5A4.25 4.25 0 0 0 16.25 3.5h-8.5zm8.38 2.43a.75.75 0 0 1 1.06 0l.88.88a.75.75 0 0 1 0 1.06l-.88.88a.75.75 0 0 1-1.06-1.06l.38-.38-.38-.38a.75.75 0 0 1 0-1.06zm-4.38 1.12a4.13 4.13 0 1 1 0 8.26 4.13 4.13 0 0 1 0-8.26zm0 1.5a2.62 2.62 0 1 0 0 5.24 2.62 2.62 0 0 0 0-5.24z"></path>
+      </svg>
+    </a>
+
+   <a href="https://mail.google.com/mail/?view=cm&to=imladris@prostorklidu.cz"
+   target="_blank"
+   class="icon-link mail-icon"
+   title="Napsat email">
+<p>imladris@prostorklidu.cz</p>
+  <!-- EMAIL SVG -->
+  <svg viewBox="0 0 24 24" width="22" height="22"
+       fill="none" stroke="currentColor" stroke-width="1.8"
+       stroke-linecap="round" stroke-linejoin="round"
+       xmlns="http://www.w3.org/2000/svg">
+    <rect x="2" y="4" width="20" height="16" rx="2"></rect>
+    <polyline points="2,6 12,13 22,6"></polyline>
+  </svg>
+
+</a>
   </div>
 </div>
+
 
 <section id="about-me" class="page-section">
   <div class="milk-card about-card">
@@ -114,7 +140,7 @@
   </div>
 </section>
 
-<div id="audio" class="info-box">Zatím tu nic není, ale brzy přibyde 🎧</div>
+
 
 <!-- ===== HERO ===== -->
 <header class="hero">
@@ -806,16 +832,7 @@ function openSection(id, el) {
   el.classList.add('active');
 }
 
-function openInfo(id) {
-  document.querySelectorAll('.info-box')
-    .forEach(b => b.style.display = 'none');
 
-  const box = document.getElementById(id);
-  if (box) {
-    box.style.display = 'block';
-    setTimeout(() => box.style.display = 'none', 3000);
-  }
-}
 </script>
 
 <script>
